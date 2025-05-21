@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - SmileCare</title>
+    <link rel="icon" type="image/png" href="../ASSETS/ICONS/dental-clinic.png">
+    <link rel="stylesheet" href="../CSS/doctorsStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+          
+          <!-- 🔵 Logo -->
+          <div class="logo">SmileCare</div>
+      
+          <!-- 📱 Menu Toggle Icon -->
+          <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+            <img src="../ASSETS/ICONS/menu-toggle.png" alt="menu icon" />
+          </div>
+      
+          <!-- 🌐 Navigation Center -->
+          <nav class="nav-center" id="nav-center">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#" id="loginBtn">Login / Sign Up</a></li>
+            </ul>
+      
+            <!-- Book Appointment Button -->
+            <a href="#" id="appointmentBtn" class="btn btn-primary">Make an Appointment</a>
+          </nav>
+      
+        </div>
+      </header>
+
+           <!-- appointment modal starts -->
+         <!-- Appointment Modal -->
+<!-- Placeholder for Appointment Modal (just before </body>) -->
+<div id="appointmentContainer"></div>
+<!-- appointment modal ends -->
+
+    <!-- Add the rest of your page content here -->
+
+    <!-- Hero Section starts-->
+    <section class="doctors-hero">
+        <div class="container">
+          <div class="hero-text">
+            <h1>Well Experienced Doctors</h1>
+            <p class="breadcrumb">
+              <a href="index.html">Home</a> / Doctors
+            </p>
+          </div>
+        </div>
+      </section>
+      
+  
+<!-- Hero section Ends -->
+
+<!-- doctors section starts-->
+<section class="doctors-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+        <h2>Meet Our Experienced Dentists</h2>
+        <p>
+          Our expert dental team is dedicated to providing top-quality care. Each doctor is highly trained and committed to your smile and oral health.
+        </p>
+      </div>
+      <div class="doctors-grid" id="doctorsContainer">
+        <!-- Doctor cards will be injected here by JS -->
+      </div>
+    </div>
+  </section>
+  <!-- doctors section ends -->
+
+  <!-- Achievements Section Starts -->
+<section class="achievements-section">
+  <div class="achievements-overlay">
+    <div class="container achievements-container">
+
+      <div class="achievements-left">
+        <h3>Achievements</h3>
+        <p>We are proud of the remarkable progress we've made in the dental industry. Our commitment to excellence, innovative treatments, and exceptional service have earned us numerous accolades and satisfied clients.
+        </p>
+      </div>
+
+      <div class="achievements-right">
+        <div class="achievements-grid">
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="1000">0</h2>
+            <span>Happy Patients</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="850">0</h2>
+            <span>Qualified Doctors</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="25">0</h2>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="120">0</h2>
+            <span>Dental Awards</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section ends -->
+
+<!-- pricing card section starts -->
+<section class="pricing-section" data-aos="fade-up">
+  <div class="pricing-header" data-aos="fade-up" data-aos-delay="100">
+    <h5>Our Best Pricing</h5>
+    <p>We offer affordable dental plans tailored for your needs without compromising quality care and service.</p>
+  </div>
+
+  <div class="pricing-cards-container" id="pricingCards">
+    <!-- Dynamic Cards will come here -->
+  </div>
+</section>
+
+  <!-- pricing card section ends  -->
+
+  <!-- Footer Section starts -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- First Row: 4 Columns including Social Media -->
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>SmileCare</h3>
+        <p>Providing quality dental care with a personal touch.</p>
+      </div>
+
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <h4>Contact Us</h4>
+        <p>+1 (800) 123-4567</p>
+        <p>info@smilecare.com</p>
+      </div>
+
+      <!-- Social Media Column -->
+      <div class="footer-social">
+        <h4>Follow Us on Social Media</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" class="social-facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" target="_blank" class="social-twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="social-instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom row -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 SmileCare. All Rights Reserved.</p>
+      <p>This template is made with <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+    </div>
+</footer>
+
+<!-- footer section ends -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../JS/doctors.js"></script>
+</body>
+</html>

@@ -1,0 +1,885 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --primary-color: #2e86de;
+    --primary-dark: #1b4f72;
+    --white: #ffffff;
+    --black: #000000;
+    --light-gray: #f8f9fa;
+    --soft-blue: #f5f9ff;
+    --light-red: #fef3f3;
+    --subscribe-bg-color: #3fbbc0;
+    --card-border: rgba(0, 0, 0, 0.05);
+    --max-width: 1200px;
+  }
+  
+  /* 🔁 Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global font for the entire website */
+  body {
+  font-family: 'Poppins', sans-serif;
+  }
+  
+  /* 🧱 Navbar Layout */
+  header {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* 🔵 Logo */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* 📱 Menu Icon */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* 🌐 Nav Links Container */
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* 📌 Book Appointment Button */
+  .btn.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .btn.btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  /* 🔁 Responsive Design */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-center {
+  
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem 2rem;
+      background-color: var(--white);
+    }
+  
+    .nav-center.active {
+      display: flex;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+    }
+  
+    .btn.btn-primary {
+      align-self: flex-start;
+    }
+  }
+  .nav-links a.active-link {
+  color: var(--primary-color);        /* or any theme color */
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color); /* optional underline effect */
+}
+  
+  /* login starts */
+    /* Modal (Popup) Styles */
+  /* Modal Background */
+  /* Modal Background */
+  /* Modal Container */
+  /* Modal background */
+  /* Modal background */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  input#mobileNumber {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  button#sendOtpBtn, 
+  button#verifyOtpBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button#sendOtpBtn:hover, 
+  button#verifyOtpBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+  }
+  
+  .otp-input {
+    width: 40px;
+    height: 45px;
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+  }
+  
+  .otp-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  }
+  
+  #timer {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  #otpStatus {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  
+  .login-success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 25px;
+    font-size: 17px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: slideIn 0.5s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+    
+  /* login ends */
+  
+  /* appointment starts */
+   /* Modal Styles */
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    z-index: 10000;
+  }
+  
+  .close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-form input,
+  .modal-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .modal-form textarea {
+    resize: vertical;
+  }
+  
+  .modal-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 80%;
+    }
+  }
+  /* hero section starts */
+  .doctors-hero {
+    background-image: url('../ASSETS/IMAGES/SmileCare_BG-1.jpg'); /* Your local image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+  }
+  
+  .doctors-hero .container {
+    max-width: var(--max-width);
+    padding: 60px 40px; /* Increased padding */
+  }
+  
+  .hero-text {
+    text-align: left;
+  }
+  
+  .hero-text h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Color updated */
+  }
+  
+  .breadcrumb {
+    font-size: 16px;
+    color: var(--white);
+  }
+  
+  .breadcrumb a {
+    color: var(--white);
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  
+  .breadcrumb a:hover {
+    color: var(--primary-color);
+  }
+  
+    /* Hero section Ends */
+
+    /* Section heading starts */
+.section-heading {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .section-heading h5 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  
+  .section-heading p {
+    font-size: 1rem;
+    color: var(--primary-dark);
+    line-height: 1.6;
+  }
+  
+  /* Section heading ends */
+
+    /* Service Section Starts */
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 1 rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .service-card {
+    background-color: var(--light-gray);
+    width: 23%;
+    /* flex: 1 1 300px; */
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-card img {
+    width: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .service-card {
+      width: 70%; /* width on small screens */
+      margin: 0 auto; /* Center the card */
+      padding: 1rem; /* Add some padding for extra space around the content */
+    }
+  
+    .service-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5; /* Makes text more readable */
+      word-wrap: break-word; /* Break long words onto the next line */
+      white-space: normal; /* Allow text to wrap normally */
+    }
+  }
+  
+  /* Service Section Ends */
+
+  /* Achievement Section Starts */
+
+/* Achievements Section */
+.achievements-section {
+    /* position: relative; */
+    background: url('../ASSETS/IMAGES/SmileCare_BG-1.jpg');
+    background-attachment: fixed; /* This creates the parallax effect */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    color: #fff;
+    margin-top: 50px;
+  }
+  
+  .achievements-text {
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 10px;
+  }
+  
+  .achievements-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color for numbers */
+  }
+  
+  .achievements-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    padding: 60px 40px;
+  }
+  
+  .achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .achievements-left {
+    flex: 1;
+    background-color: #08517A; /* Dark blue shade */
+    color: #fff;
+    padding: 40px;
+    margin-right: 30px;
+    border-radius: 10px;
+  }
+  
+  .achievements-left h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .achievements-left p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .achievements-right {
+    flex: 2;
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .achievement-box {
+    color: #fff;
+  }
+  
+  .achievement-box h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .achievement-box span {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .achievements-container {
+      flex-direction: column;
+    }
+  
+    .achievements-left {
+      margin-right: 0;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+  
+    .achievements-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Achievement Section Ends */
+
+  /* pricing card section starts */
+
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 20px;
+    background-color: #fff;
+  }
+  
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .pricing-header h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  .pricing-header p {
+    font-size: 1rem;
+    color: var(--primary-dark);
+  }
+  
+  /* Cards Container */
+  .pricing-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  /* Pricing Card */
+  .pricing-card {
+    position: relative;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  /* Plan Title */
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+  
+  /* Plan Price */
+  .pricing-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+  }
+  
+  /* Price Period */
+  .pricing-card .period {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 20px;
+  }
+  
+  /* Features */
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+  
+  .pricing-card ul li {
+    font-size: 0.95rem;
+    padding: 8px 0;
+    color: var(--text-color);
+  }
+  
+  /* Button */
+  .pricing-card .pricing-btn {
+    position:relative;
+    bottom: -60px;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  
+  /* Hover - show button */
+  .pricing-card:hover .pricing-btn {
+    bottom: 20px;
+    opacity: 1;
+  }
+  
+  /* Hover Effect on Card */
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pricing-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* pricing card section ends */
+
+  /* Footer Section */
+.footer-section {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* First Row Layout */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right,
+.footer-social {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-left h3,
+.footer-middle h4,
+.footer-right h4,
+.footer-social h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-left p,
+.footer-right p,
+.footer-middle ul {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.footer-middle ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 10px;
+}
+
+.footer-middle ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-middle ul li a:hover {
+  color: #00a8e8;
+}
+.active-link {
+  color: var(--primary-color); /* Or any color you use for highlight */
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color); /* Optional underline */
+}
+
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00a8e8;
+}
+
+/* Icon Colors */
+.social-facebook { color: #3b5998; }
+.social-twitter { color: #1da1f2; }
+.social-instagram { color: #e4405f; }
+
+.social-facebook:hover { color: #3b5998; }
+.social-twitter:hover { color: #1da1f2; }
+.social-instagram:hover { color: #e4405f; }
+
+/* Bottom Row */
+.footer-bottom {
+  width: 100%;
+  background-color: #333;
+  text-align: center;
+  padding: 20px 15px;
+  color: #bbb;
+  font-size: 14px;
+  border-top: 1px solid #555;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-bottom p a {
+  color: #00a8e8;
+  text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right,
+  .footer-social {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+  /* footer section ends */

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileCare - Dental Clinic</title>
+    <link rel="icon" type="image/png" href="../ASSETS/ICONS/dental-clinic.png">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+</head>  
+
+<body>
+    <!-- Navbar Starts -->
+   
+      <header>
+        <div class="navbar">
+          
+          <!-- 🔵 Logo -->
+          <div class="logo">SmileCare</div>
+      
+          <!-- 📱 Menu Toggle Icon -->
+          <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+            <img src="../ASSETS/ICONS/menu-toggle.png" alt="menu icon" />
+          </div>
+      
+          <!-- 🌐 Navigation Center -->
+          <nav class="nav-center" id="nav-center">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#" id="loginBtn">Login / Sign Up</a></li>
+            </ul>
+      
+            <!-- Book Appointment Button -->
+            <a href="#" id="appointmentBtn" class="btn btn-primary">Make an Appointment</a>
+          </nav>
+      
+        </div>
+      </header>
+         <!-- login starts-->
+          <!-- Login Popup Modal -->
+          <!-- <div id="loginContainer"></div> -->
+           
+        <!-- login ends  -->
+
+        <!-- appointment modal starts -->
+         <!-- Appointment Modal -->
+<!-- Placeholder for Appointment Modal (just before </body>) -->
+<div id="appointmentContainer"></div>
+         <!-- appointment modal ends -->
+  <!-- Navbar Ends -->
+
+  <!-- Hero Section Starts -->
+  <section class="hero-slider">
+    <div class="hero-slide active" style="background-image: url('../ASSETS/IMAGES/SmileCare_BG-1.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Your Smile, Our Passion</h1>
+        <p>Expert dental care for a brighter, healthier you.</p>
+        <a href="#" class="btn btn-primary">Make an Appointment</a>
+      </div>
+    </div>
+  
+    <div class="hero-slide" style="background-image: url('../ASSETS/IMAGES/empty-modern-teethcare-stomatology-hospital-office.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Healthy Teeth, Happy Life</h1>
+        <p>Advanced technology & caring hands for every patient.</p>
+        <a href="#" class="btn btn-primary">Make an Appointment</a>
+      </div>
+    </div>
+
+     <!-- 🔘 Pagination Dots -->
+  <div class="slider-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+  </section>
+  
+<!-- Hero Section Ends -->
+
+
+<!-- Info Section Starts -->
+
+<section class="info-section" data-aos="fade-up">
+  <div class="container">
+    <!-- Emergency Cases -->
+    <div class="info-box emergency-box" data-aos="fade-right">
+      <!-- <img src="../ASSETS/ICONS/emergency.png" alt="Emergency Icon" class="info-icon" /> -->
+      <h3>Emergency Cases</h3>
+      <p>If you need urgent dental care, call us immediately. We’re available 24/7.</p>
+      <a href="tel:+911234567890" class="info-link">+91 12345 67890</a>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="info-box hours-box" data-aos="fade-up">
+      <!-- <img src="../ASSETS/ICONS/clock.png" alt="Clock Icon" class="info-icon" /> -->
+      <h3>Opening Hours</h3>
+      <ul class="timing-list">
+        <li>Mon - Fri: 9:00 AM - 8:00 PM</li>
+        <li>Saturday: 10:00 AM - 5:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- Make an Appointment -->
+    <div class="info-box appointment-box" data-aos="fade-left">
+      <!-- <img src="../ASSETS/ICONS/calendar.png" alt="Calendar Icon" class="info-icon" /> -->
+      <h3>Make an Appointment</h3>
+      <p>Book your visit easily online and choose a date that suits you best.</p>
+      <a href="#" class="btn btn-primary">Make an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<!-- info Section Ends -->
+
+<!-- service section heading starts -->
+<section class="section-heading" data-aos="zoom-in">
+  <h5>Our Services - Keeps You Smiling</h5>
+  <p>We offer the best dental services using advanced technologies for quality care.</p>
+</section>
+<!-- Service section heading ends -->
+
+<!-- Service Section Starts -->
+
+<section class="services">
+
+  <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="../ASSETS/ICONS/tooth.png" alt="Cleaning Icon" />
+    <h3>Teeth Cleaning</h3>
+    <p>Professional cleaning to maintain oral hygiene and prevent cavities.</p>
+  </div>
+
+  <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="../ASSETS/ICONS/dental-scaler.png" alt="Implant Icon" />
+    <h3>Dental Implants</h3>
+    <p>Natural-looking implants to restore your smile and chewing ability.</p>
+  </div>
+
+  <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="../ASSETS/ICONS/healthy-teeth.png" alt="Whitening Icon" />
+    <h3>Teeth Whitening</h3>
+    <p>Get a brighter smile with our safe and effective whitening treatments.</p>
+  </div>
+
+  <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="../ASSETS/ICONS/syringe.png" alt="Checkup Icon" />
+    <h3>Regular Checkup</h3>
+    <p>Routine exams to monitor dental health and catch issues early.</p>
+  </div>
+
+</section>
+
+ <!-- Service Section Ends -->
+
+ <!-- left Image right content section Starts -->
+
+ <div class="choose-us-section" data-aos="fade-up">
+  <div class="choose-us-container">
+    <div class="choose-us-left" data-aos="fade-right">
+      <img src="../ASSETS/IMAGES/ozkan-guner-AduzI0N9iRI.jpg" alt="Dental Care Image">
+    </div>
+    <div class="choose-us-right" data-aos="fade-left">
+      <h3>Why Choose Us</h3>
+      <p>We provide the best dental care with experienced doctors and the latest technology to ensure your comfort and health.</p>
+      <p>Our clinic offers comprehensive services to meet all your dental needs, from routine check-ups to advanced treatments.</p>
+      <h3>Dentacare with a personal touch</h3>
+      <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+      <h3>Well Experience Dentist</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      <h3>High Technology Facilities</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      
+    </div>
+
+</div>
+  </div>
+</div>
+
+ <!-- left Image right content section Ends -->
+
+ <section class="dentist-section" data-aos="fade-up">
+  <div class="container">
+
+    <section class="section-header" data-aos="zoom-in">
+      <h5>Meet Our Experienced Dentists</h5>
+      <p> Our dedicated team of dental professionals brings years of experience and personalized care to every patient. We combine expertise with compassion to ensure your smile stays healthy and bright.</p>
+    </section>
+
+    <div class="dentist-cards">
+      <!-- Dentist 1 -->
+      <div class="dentist-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="../ASSETS/IMAGES/pexels-tima-miroshnichenko-5452268.jpg" alt="Dr. John Doe">
+        <h3>Dr. John Doe</h3>
+        <span>Orthodontist</span>
+        <p>Expert in aligning smiles and improving dental aesthetics with advanced orthodontic care.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+  
+      <!-- Dentist 2 -->
+      <div class="dentist-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="../ASSETS/IMAGES/pexels-shkrabaanthony-6749777.jpg" alt="Dr. Sarah Lee">
+        <h3>Dr. Sarah Lee</h3>
+        <span>Pediatric Dentist</span>
+        <p>Passionate about creating a positive dental experience for children of all ages.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+  
+      <!-- Dentist 3 -->
+      <div class="dentist-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="../ASSETS/IMAGES/pexels-cedric-fauntleroy-4270371.jpg" alt="Dr. Michael Smith">
+        <h3>Dr. Michael Smith</h3>
+        <span>Prosthodontist</span>
+        <p>Specialist in dental restoration, implants, and smile makeovers with precision care.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+  
+      <!-- Dentist 4 -->
+      <div class="dentist-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="../ASSETS/IMAGES/pexels-shkrabaanthony-5215024.jpg" alt="Dr. Emma Watson">
+        <h3>Dr. Emma Watson</h3>
+        <span>Endodontist</span>
+        <p>Focused on root canal therapy and preserving your natural teeth with gentle techniques.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Dentist profiles will go here -->
+  </div>
+</section>
+
+<!-- Achievements Section Starts -->
+<section class="achievements-section">
+  <div class="achievements-overlay">
+    <div class="container achievements-container">
+
+      <div class="achievements-left">
+        <h3>Achievements</h3>
+        <p>We are proud of the remarkable progress we've made in the dental industry. Our commitment to excellence, innovative treatments, and exceptional service have earned us numerous accolades and satisfied clients.
+        </p>
+      </div>
+
+      <div class="achievements-right">
+        <div class="achievements-grid">
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="1000">0</h2>
+            <span>Happy Patients</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="850">0</h2>
+            <span>Qualified Doctors</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="25">0</h2>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="achievement-box">
+            <h2 class="number" data-number="120">0</h2>
+            <span>Dental Awards</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section ends -->
+
+<!-- pricing card section starts -->
+<section class="pricing-section">
+  <div class="pricing-header">
+    <h5>Our Best Pricing</h5>
+    <p>We offer affordable dental plans tailored for your needs without compromising quality care and service.</p>
+  </div>
+
+  <div class="pricing-cards-container" id="pricingCards">
+    <!-- Dynamic Cards will come here -->
+  </div>
+</section>
+
+  <!-- pricing card section ends  -->
+
+  <!-- Subscribe Section Starts -->
+
+  <section class="subscribe-section">
+    <div class="subscribe-container">
+      <div class="subscribe-content">
+        <span>Get Every Single Update Here</span>
+        <h2>Subscribe To Our Newsletter</h2>
+      </div>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  
+ <!-- Subsribe Section Ends -->
+
+ <!-- Testimony Section Starts -->
+   
+
+<!-- Testimony Section Ends -->
+
+
+
+  <!-- Testimony Section Ends -->
+<!-- procedure section starts -->
+<section class="procedure-section">
+  <div class="container">
+    <div class="procedure-content">
+      
+      <!-- Left side: Procedure Steps -->
+      <div class="procedure-left">
+        <h5 class="section-subtitle">DentaCare Procedure</h5>
+        <h2 class="section-title">High Quality Services for You</h2>
+        <p class="section-description">
+          We offer a wide range of dental services to help you achieve your dream smile.
+        </p>
+
+        <div class="procedure-steps">
+          <div class="step">
+            <i class="fa fa-tooth"></i>
+            <h4>Teeth Cleaning</h4>
+            <p>Comprehensive cleaning to remove plaque and tartar.</p>
+          </div>
+          <div class="step">
+            <i class="fa fa-heartbeat"></i>
+            <h4>Root Canal</h4>
+            <p>Expert care to save your natural teeth and relieve pain.</p>
+          </div>
+          <div class="step">
+            <i class="fa fa-smile"></i>
+            <h4>Cosmetic Dentistry</h4>
+            <p>Enhancing the appearance of your smile with modern techniques.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Get a Free Quote form -->
+      <div class="procedure-right">
+        <h3 class="form-title">Get a Free Quote</h3>
+        <form class="quote-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Subject" required />
+          <textarea placeholder="Message" rows="4" required></textarea>
+          <button type="submit">Get Quote</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- procedure section endss -->
+
+  <!-- google map section starts -->
+  <!-- <section class="google-map-section">
+    <div class="container">
+      <h2 class="section-title">Find Us On The Map</h2>
+      <div class="map-container">
+        <iframe
+  width="100%"
+  height="450"
+  src="https://www.google.com/maps/embed/v1/place?key=YOUR_NEW_GOOGLE_MAPS_API_KEY&q=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+  frameborder="0"
+  style="border:0; width: 100%; height: 100%;"
+  allowfullscreen>
+</iframe>
+      </div>
+    </div>
+  </section> -->
+  
+  <!-- google map section ends -->
+
+   
+<!-- Footer Section starts -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- First Row: 4 Columns including Social Media -->
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>SmileCare</h3>
+        <p>Providing quality dental care with a personal touch.</p>
+      </div>
+
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="contact.html ">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <h4>Contact Us</h4>
+        <p>+1 (800) 123-4567</p>
+        <p>info@smilecare.com</p>
+      </div>
+
+      <!-- Social Media Column -->
+      <div class="footer-social">
+        <h4>Follow Us on Social Media</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" class="social-facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" target="_blank" class="social-twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="social-instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom row -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 SmileCare. All Rights Reserved.</p>
+      <p>This template is made with <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+    </div>
+</footer>
+<!-- Footer Section ends -->
+
+
+<!-- footer section ends -->
+
+
+  <!-- JS Script -->
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+     <script src="../JS/script.js"></script>
+     <!-- <script src="../JS/common.js"></script> -->
+</body>
+</html>
+
